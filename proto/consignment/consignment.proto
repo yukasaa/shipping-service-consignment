@@ -4,8 +4,8 @@ package consignment;
 
 option go_package = "./consignment";
 
-service ShippingService {
-  rpc AddNewConsignment(Consignment) returns (Response) {}
+service Shipping {
+  rpc CreateConsignment(Consignment) returns (Response) {}
 }
 
 message Consignment {
