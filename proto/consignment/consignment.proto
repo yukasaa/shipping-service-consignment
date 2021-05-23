@@ -6,6 +6,8 @@ option go_package = "./consignment";
 
 service Shipping {
   rpc CreateConsignment(Consignment) returns (Response) {}
+  // 创建一个新的方法
+  rpc GetConsignments(GetRequest) returns (Response) {}
 }
 
 message Consignment {
@@ -23,7 +25,13 @@ message Container {
   string user_id = 4;
 }
 
+// 创建一个空白的获取请求
+message GetRequest {}
+
 message Response {
   bool created = 1;
   Consignment consignment = 2;
+
+  // 在通用回复消息中添加多个货物运输
+  repeated Consignment consignments = 3;
 }
